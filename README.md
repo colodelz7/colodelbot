@@ -16,8 +16,8 @@ Assistente de IA conversacional com interface holográfica, powered by Google Ge
 ```
 ├── frontend/
 │   ├── index.html          # Entrada da aplicação
-│   ├── js/script.js        # Lógica do chat e UI
-│   └── css/style.css       # Tema holográfico
+│   ├── script.js        # Lógica do chat e UI
+│   └── style.css       # Tema holográfico
 └── backend/
     ├── server.js           # Servidor Express + serve o frontend
     ├── routes/chat.js      # Endpoint da API de chat
@@ -27,31 +27,12 @@ Assistente de IA conversacional com interface holográfica, powered by Google Ge
     │   └── rateLimiter.js  # Rate limiting de requisições
     ├── package.json
     ├── .gitignore
-    └── .env.example        # Variáveis de ambiente necessárias
+    └── .env     # Variáveis de ambiente necessárias
 ```
 
 ## 🚀 Rodando localmente
 
 ```bash
-cd backend
 npm install
-cp .env.example .env
-# preencha o .env com sua chave do Gemini
 npm start
 ```
-
-Acesse `http://localhost:3002` — o backend já serve o frontend automaticamente.
-
-## ⚙️ Variáveis de Ambiente
-
-```env
-GEMINI_API_KEY=sua_chave_aqui
-GEMINI_MODEL=gemini-2.5-flash
-PORT=3002
-```
-
-Obtenha sua chave gratuitamente em [aistudio.google.com](https://aistudio.google.com/apikey).
-
-## 👨‍💻 Autor
-
-Desenvolvido por **Guilherme Colodel** — [github.com/colodelz7](https://github.com/colodelz7)
