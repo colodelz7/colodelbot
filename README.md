@@ -6,20 +6,27 @@ Assistente de IA conversacional com interface holográfica, powered by Google Ge
 
 | Camada | Tecnologia |
 |---|---|
-| Frontend | HTML + CSS + JavaScript |
+| Frontend | React 19 + Vite 5 |
 | Backend | Node.js + Express |
-| IA | Google Gemini 2.5 Flash |
-| Bibliotecas | Marked.js · Highlight.js |
+| IA | Google Gemini Flash |
+| Bibliotecas | Marked.js · DOMPurify |
 
 ## 📁 Estrutura
 
 ```
 ├── frontend/
-│   ├── index.html          # Entrada da aplicação
-│   ├── script.js        # Lógica do chat e UI
-│   └── style.css       # Tema holográfico
+│   ├── src/
+│   │   ├── components/     # ChatPanel, Sidebar, RobotPanel, etc.
+│   │   ├── hooks/          # useChat, useConversations, useSettings, etc.
+│   │   ├── lib/            # api.js, markdown.js, utils.js
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── style.css       # Tema holográfico
+│   ├── index.html
+│   ├── vite.config.js
+│   └── package.json
 └── backend/
-    ├── server.js           # Servidor Express + serve o frontend
+    ├── server.js           # Servidor Express
     ├── routes/chat.js      # Endpoint da API de chat
     ├── services/
     │   └── geminiService.js  # Integração com Gemini + memória
@@ -27,12 +34,23 @@ Assistente de IA conversacional com interface holográfica, powered by Google Ge
     │   └── rateLimiter.js  # Rate limiting de requisições
     ├── package.json
     ├── .gitignore
-    └── .env     # Variáveis de ambiente necessárias
+    └── .env                # Variáveis de ambiente necessárias
 ```
 
 ## 🚀 Rodando localmente
 
+### ⚙️ Backend
+
 ```bash
+cd backend
 npm install
 npm start
+```
+
+### 💻 Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
 ```
